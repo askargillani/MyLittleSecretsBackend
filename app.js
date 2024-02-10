@@ -1,5 +1,5 @@
 import express from "express";
-import router from "./routes/secret.js";
+import loginRouter from "./routes/secret.js";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
@@ -15,7 +15,7 @@ export const app = express();
 dotenv.config();
 const port = process.env.PORT;
 app.use(bodyParser.json());
-app.use("/",router);
+app.use("/",loginRouter);
 
 app.get("/", (req, res) => {
     res.send("Nice working");

@@ -1,7 +1,7 @@
 import express from "express";
 import { newSecret } from "../controllers/secrets.js";
-const router = express.Router();
+const loginRouter = express.Router();
 
-router.post("/addSecret", newSecret);
+loginRouter.post("/addSecret", newSecret);
 
-export default router;
+export default loginRouter;
