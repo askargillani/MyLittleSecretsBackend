@@ -1,5 +1,5 @@
 import express from "express";
-import router from "./routes/secret.js";
+import loginRouter from "./routes/secret.js";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
@@ -17,6 +17,7 @@ dotenv.config();
 const port = process.env.PORT;
 app.use(bodyParser.json());
 app.use(cors());
+app.use("/",loginRouter);
 app.use("/",router);
 
 app.get("/", (req, res) => {
